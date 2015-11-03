@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5f13f946-0bec-4f20-bcc5-6326103771c6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/ScgBroadcastorService/Service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service55.xsd" MetadataType="Schema" ID="befac02b-8cfb-4aef-ba50-cfa7277e7d64" SourceId="1" SourceUrl="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service56.xsd" MetadataType="Schema" ID="01d74d47-4a18-41a3-9353-1516ae679a4c" SourceId="1" SourceUrl="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd4" />
+    <MetadataFile FileName="Service57.xsd" MetadataType="Schema" ID="c4f28718-c134-41fa-b6c0-ccef7f7a535d" SourceId="1" SourceUrl="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="Service58.xsd" MetadataType="Schema" ID="6685ba76-892a-4349-8630-77ed370d6954" SourceId="1" SourceUrl="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="Service59.xsd" MetadataType="Schema" ID="3f33cd88-cc34-41d0-a722-fee91210e6a0" SourceId="1" SourceUrl="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="ScgBroadcastorService11.wsdl" MetadataType="Wsdl" ID="07334aee-5c90-4e75-9f0f-810776497707" SourceId="1" SourceUrl="http://localhost/ScgBroadcastorService/Service.svc?wsdl" />
+    <MetadataFile FileName="Service11.disco" MetadataType="Disco" ID="17d2aa9b-57d0-44c5-abf9-14096984d073" SourceId="1" SourceUrl="http://localhost/ScgBroadcastorService/Service.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

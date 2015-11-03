@@ -1,0 +1,528 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA630E29-135F-42C3-8B4D-624284476656}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharedCardGame</RootNamespace>
+    <AssemblyName>SharedCardGame</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChatForm.Designer.cs">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="DealingParametersDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DealingParametersDialog.Designer.cs">
+      <DependentUpon>DealingParametersDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IMouseEventTransparentControl.cs" />
+    <Compile Include="MessageBoxEx.cs" />
+    <Compile Include="MouseEventTransparentGatheringRectangleControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MouseEventTransparentControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MouseEventTransparentLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MouseEventTransparentPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MouseEventTransparentVectorControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScgBroadcastorCallback.cs" />
+    <Compile Include="Service References\ScgServiceLibrary\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChatForm.resx">
+      <DependentUpon>ChatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DealingParametersDialog.resx">
+      <DependentUpon>DealingParametersDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\ScgServiceLibrary\ScgBroadcastorService1.wsdl" />
+    <None Include="Service References\ScgServiceLibrary\ScgBroadcastorService11.wsdl" />
+    <None Include="Service References\ScgServiceLibrary\Service5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScgServiceLibrary\Service51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScgServiceLibrary\Service52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScgServiceLibrary\Service53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScgServiceLibrary\Service54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScgServiceLibrary\Service55.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScgServiceLibrary\Service56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScgServiceLibrary\Service57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScgServiceLibrary\Service58.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ScgServiceLibrary\Service59.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ScgServiceLibrary\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ScgServiceLibrary\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ScgServiceLibrary\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ScgServiceLibrary\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdKS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ScgServiceLibrary\Service11.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdKC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdKD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdKH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd2C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd2D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd2H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd2S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd3C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd3D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd3H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd3S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd4C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd4D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd4H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd4S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd5C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd5D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd5H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd5S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd6C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd6D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd6H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd6S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd7C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd7D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd7H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd7S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd8C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd8D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd8H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd8S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd9C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd9D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd9H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Crd9S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdAD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdAH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdBackB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdBackR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdJC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdJD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdJH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdJS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdQC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdQD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdQH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdQS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdStackB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdStackR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdTD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdTH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\CrdTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\wood.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ScgServiceLibrary\Service1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StkCard2C.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd2C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd2D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd2H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd2S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd3C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd3D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd3H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd3S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd4C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd4D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd4H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd4S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd5C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd5D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd5H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd5S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd6C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd6D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd6H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd6S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd7C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd7D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd7H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd7S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd8C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd8D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd8H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd8S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd9C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd9D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd9H.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrd9S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdAC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdAD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdAH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdAS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdBackB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdBackR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdJC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdJD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdJH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdJS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdKC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdKD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdKH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdKS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdQC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdQD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdQH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdQS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdTD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdTH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\StkCrdTS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\png\Raptor Development Transp Texte.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

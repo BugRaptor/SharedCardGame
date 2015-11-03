@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ScgServiceLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ScgServiceLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Forms" />
+  <xs:import schemaLocation="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+  <xs:complexType name="MouseEventDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Windows.Forms" minOccurs="0" name="MouseButton" type="q1:MouseButtons" />
+      <xs:element minOccurs="0" name="MouseEventType" type="tns:MouseEventType" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="MouseLocation" type="q2:Point" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MouseEventDataType" nillable="true" type="tns:MouseEventDataType" />
+  <xs:simpleType name="MouseEventType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MouseDown" />
+      <xs:enumeration value="MouseUp" />
+      <xs:enumeration value="MouseMove" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MouseEventType" nillable="true" type="tns:MouseEventType" />
+  <xs:complexType name="WatchdogDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WatchdogDataType" nillable="true" type="tns:WatchdogDataType" />
+  <xs:complexType name="ClientCommandDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientCommandType" type="tns:ClientCommandType" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DealingClockwise" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumberOfCardsToDeal" type="xs:int" />
+      <xs:element minOccurs="0" name="SharedObjectId" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="TargetRectangle" type="q3:Rectangle" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClientCommandDataType" nillable="true" type="tns:ClientCommandDataType" />
+  <xs:simpleType name="ClientCommandType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ResetCmd" />
+      <xs:enumeration value="LeavingCmd" />
+      <xs:enumeration value="GatheringCmd" />
+      <xs:enumeration value="ExtractFirstCardCmd" />
+      <xs:enumeration value="ShuffleUpCmd" />
+      <xs:enumeration value="RequestDealingParametersCmd" />
+      <xs:enumeration value="CancelDealingParametersDialogCmd" />
+      <xs:enumeration value="DealCmd" />
+      <xs:enumeration value="CountCardsCmd" />
+      <xs:enumeration value="ContextualMenuClosedCmd" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ClientCommandType" nillable="true" type="tns:ClientCommandType" />
+  <xs:complexType name="ChatMessageDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChatMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChatMessageDataType" nillable="true" type="tns:ChatMessageDataType" />
+  <xs:complexType name="StateChangeEventDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DealingClockwise" type="xs:boolean" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="GatheringRectangle" type="q4:Rectangle" />
+      <xs:element minOccurs="0" name="GrabbingClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageBoxTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageToDisplay" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="NewSharedObjectLocation" type="q5:Point" />
+      <xs:element minOccurs="0" name="NewSharedObjectPicture" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfCardsToDeal" type="xs:int" />
+      <xs:element minOccurs="0" name="PrivateOwnerClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecipientClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReleasingClientName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SharedObjectId" type="xs:int" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.Drawing" minOccurs="0" name="SharedObjectSize" type="q6:Size" />
+      <xs:element minOccurs="0" name="StateChangeEventType" type="tns:StateChangeEventType" />
+      <xs:element minOccurs="0" name="ToEveryone" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StateChangeEventDataType" nillable="true" type="tns:StateChangeEventDataType" />
+  <xs:simpleType name="StateChangeEventType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NoStateChange" />
+      <xs:enumeration value="NewSharedObject" />
+      <xs:enumeration value="DisposeSharedObject" />
+      <xs:enumeration value="SharedObjectMove" />
+      <xs:enumeration value="ShowGatheringRectangle" />
+      <xs:enumeration value="HideGatheringRectangle" />
+      <xs:enumeration value="OpenContextualMenuOnSharedObject" />
+      <xs:enumeration value="OpenDealingParametersDialog" />
+      <xs:enumeration value="ShowMessage" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StateChangeEventType" nillable="true" type="tns:StateChangeEventType" />
+</xs:schema>

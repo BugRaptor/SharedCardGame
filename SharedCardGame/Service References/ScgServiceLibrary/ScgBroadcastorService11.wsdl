@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ScgBroadcastorService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IScgBroadcastorService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ScgServiceLibrary" />
+      <xsd:import schemaLocation="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Forms" />
+      <xsd:import schemaLocation="http://localhost/ScgBroadcastorService/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Drawing" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IScgBroadcastorService_RegisterClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterClient" />
+  </wsdl:message>
+  <wsdl:message name="IScgBroadcastorService_NotifyServer_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyServer" />
+  </wsdl:message>
+  <wsdl:message name="IScgBroadcastorService_NotifyServerWatchdog_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyServerWatchdog" />
+  </wsdl:message>
+  <wsdl:message name="IScgBroadcastorService_NotifyServerCmd_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyServerCmd" />
+  </wsdl:message>
+  <wsdl:message name="IScgBroadcastorService_NotifyServerChatMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyServerChatMessage" />
+  </wsdl:message>
+  <wsdl:message name="IScgBroadcastorService_BroadcastToClient_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:BroadcastToClient" />
+  </wsdl:message>
+  <wsdl:message name="IScgBroadcastorService_BroadcastChatMessageToClient_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:BroadcastChatMessageToClient" />
+  </wsdl:message>
+  <wsdl:message name="IScgBroadcastorService_BroadcastBadProtocolVersion_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:BroadcastBadProtocolVersion" />
+  </wsdl:message>
+  <wsdl:portType name="IScgBroadcastorService">
+    <wsdl:operation name="RegisterClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScgBroadcastorService/RegisterClient" message="tns:IScgBroadcastorService_RegisterClient_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyServer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScgBroadcastorService/NotifyServer" message="tns:IScgBroadcastorService_NotifyServer_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyServerWatchdog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScgBroadcastorService/NotifyServerWatchdog" message="tns:IScgBroadcastorService_NotifyServerWatchdog_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyServerCmd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScgBroadcastorService/NotifyServerCmd" message="tns:IScgBroadcastorService_NotifyServerCmd_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyServerChatMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IScgBroadcastorService/NotifyServerChatMessage" message="tns:IScgBroadcastorService_NotifyServerChatMessage_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastToClient">
+      <wsdl:output wsaw:Action="http://tempuri.org/IScgBroadcastorService/BroadcastToClient" message="tns:IScgBroadcastorService_BroadcastToClient_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastChatMessageToClient">
+      <wsdl:output wsaw:Action="http://tempuri.org/IScgBroadcastorService/BroadcastChatMessageToClient" message="tns:IScgBroadcastorService_BroadcastChatMessageToClient_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastBadProtocolVersion">
+      <wsdl:output wsaw:Action="http://tempuri.org/IScgBroadcastorService/BroadcastBadProtocolVersion" message="tns:IScgBroadcastorService_BroadcastBadProtocolVersion_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IScgBroadcastorService" type="tns:IScgBroadcastorService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IScgBroadcastorService_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="RegisterClient">
+      <soap12:operation soapAction="http://tempuri.org/IScgBroadcastorService/RegisterClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyServer">
+      <soap12:operation soapAction="http://tempuri.org/IScgBroadcastorService/NotifyServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyServerWatchdog">
+      <soap12:operation soapAction="http://tempuri.org/IScgBroadcastorService/NotifyServerWatchdog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyServerCmd">
+      <soap12:operation soapAction="http://tempuri.org/IScgBroadcastorService/NotifyServerCmd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyServerChatMessage">
+      <soap12:operation soapAction="http://tempuri.org/IScgBroadcastorService/NotifyServerChatMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastToClient">
+      <soap12:operation soapAction="http://tempuri.org/IScgBroadcastorService/BroadcastToClient" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastChatMessageToClient">
+      <soap12:operation soapAction="http://tempuri.org/IScgBroadcastorService/BroadcastChatMessageToClient" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BroadcastBadProtocolVersion">
+      <soap12:operation soapAction="http://tempuri.org/IScgBroadcastorService/BroadcastBadProtocolVersion" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ScgBroadcastorService">
+    <wsdl:port name="NetTcpBinding_IScgBroadcastorService" binding="tns:NetTcpBinding_IScgBroadcastorService">
+      <soap12:address location="net.tcp://laptop-pfc/ScgBroadcastorService/Service.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://laptop-pfc/ScgBroadcastorService/Service.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Spn>host/94.23.220.199</Spn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
